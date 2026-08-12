@@ -1,36 +1,51 @@
-import { buttonVariants } from "@heroui/styles";
+import { Button, Container, Flex, Link, Text } from "@chakra-ui/react";
+import { ArrowRight } from "lucide-react";
 
 export default function Nav() {
   return (
-    <nav className="sticky top-0 z-50 border-b border-border bg-background/92 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-[1120px] items-center justify-between px-8 py-4.5 max-[760px]:px-5 max-[760px]:py-4">
-        <a
-          href="#top"
-          className="font-[family-name:var(--serif)] text-2xl font-bold tracking-[0.5px] text-foreground no-underline"
+    <Container
+      as="nav"
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      gap="leading"
+      py="5"
+      borderBottomWidth="2px"
+      borderBottomColor="border"
+    >
+      <Text textStyle="wordmark">Kampung Ride</Text>
+      <Flex alignItems="center" gap="leading" flexWrap="wrap">
+        <Link
+          href="#how"
+          fontSize="14px"
+          color="fg"
+          _hover={{ color: "accent.fg", textDecoration: "none" }}
         >
-          Kampung Ride<span className="text-accent">.</span>
-        </a>
-        <ul className="flex list-none items-center gap-8 max-[760px]:hidden">
-          <li>
-            <a href="#how" className="text-sm text-muted no-underline transition-colors hover:text-foreground">
-              How it works
-            </a>
-          </li>
-          <li>
-            <a href="#commute" className="text-sm text-muted no-underline transition-colors hover:text-foreground">
-              Meet your commute
-            </a>
-          </li>
-          <li>
-            <a href="#faq" className="text-sm text-muted no-underline transition-colors hover:text-foreground">
-              FAQ
-            </a>
-          </li>
-        </ul>
-        <a href="#signup" className={buttonVariants({ variant: "primary" })}>
-          Get early access
-        </a>
-      </div>
-    </nav>
+          How it works
+        </Link>
+        <Link
+          href="#drive"
+          fontSize="14px"
+          color="fg"
+          _hover={{ color: "accent.fg", textDecoration: "none" }}
+        >
+          Already driving?
+        </Link>
+        <Link
+          href="#faq"
+          fontSize="14px"
+          color="fg"
+          _hover={{ color: "accent.fg", textDecoration: "none" }}
+        >
+          FAQ
+        </Link>
+        <Button asChild colorPalette="accent" variant="solid" size="sm">
+          <a href="#start">
+            Join waitlist
+            <ArrowRight size={16} />
+          </a>
+        </Button>
+      </Flex>
+    </Container>
   );
 }

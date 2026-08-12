@@ -1,18 +1,23 @@
-import { cn } from "@/lib/utils";
+import Footer from "@/components/Footer";
+import Nav from "@/components/Nav";
+import Provider from "@/components/ui/provider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { ThemeProvider } from "next-themes";
-import { Geist } from "next/font/google";
-import "./globals.css";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+import { Archivo } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "Kampung Ride — share the ride you're already making",
+  title: "Kampung Ride — skip the surge, ride with your neighbours",
   description:
-    "Kampung Ride is how neighbours share the ride they're already making. Register your regular commute and let people from your own estate tag along.",
+    "Kampung Ride matches you with neighbours from your own estate who are already driving to work. Tag along, chip in for the ride, skip the surge pricing.",
 };
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  weight: ["400", "600", "800"],
+  variable: "--font-archivo",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -20,14 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={cn("dark scroll-smooth font-sans [color-scheme:dark]", geist.variable)}
-    >
-      <body className="overflow-x-hidden bg-background font-[family-name:var(--sans)] leading-[1.6] text-foreground">
-        <ThemeProvider attribute="class" defaultTheme="light">
-        {children}
-        </ThemeProvider>
+    <html lang="en" className={archivo.variable} suppressHydrationWarning>
+      <body>
+        <Provider>
+          <Nav />
+          <main>{children}</main>
+          <Footer />
+        </Provider>
         <Analytics />
         <SpeedInsights />
       </body>

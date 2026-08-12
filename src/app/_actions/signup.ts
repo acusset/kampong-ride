@@ -86,6 +86,6 @@ export async function signupAction(
 
   return {
     status: "success",
-    message: "You're on the list. We'll email you when your estate goes live.",
+    message: "You're on the list — we'll email you when Kampung Ride reaches your estate.",
   };
 }

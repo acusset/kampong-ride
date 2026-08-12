@@ -1,24 +1,29 @@
-import Eyebrow from "./Eyebrow";
-import HeroSignup from "./HeroSignup";
-import TransitDiagram from "./TransitDiagram";
+import { Box, Button, Container, Heading, Text } from "@chakra-ui/react";
 
 export default function Hero() {
   return (
-    <section className="pt-22 pb-16">
-      <div className="mx-auto grid max-w-[1120px] grid-cols-[1.1fr_0.9fr] items-center gap-14 px-8 max-[900px]:grid-cols-1 max-[640px]:px-5">
-        <div>
-          <Eyebrow>BLK 51 &rarr; Raffles Place &middot; MON / WED / FRI &middot; 08:15</Eyebrow>
-
-          <HeroSignup />
-
-          <p className="mt-3 text-[13px] text-[color:var(--field-placeholder)]">
-            Free while we&rsquo;re building. We&rsquo;ll only email you when Kampung Ride reaches
-            your estate.
-          </p>
-        </div>
-
-        <TransitDiagram />
-      </div>
-    </section>
+    <Container as="section" pt="leading4" pb="leading3">
+      <Heading as="h1" textStyle="heroTitle" m="0 0 0 -0.058em">
+        <Box as="span" display="block">
+          Skip the surge.
+        </Box>
+        <Box as="span" display="block">
+          Ride with your neighbours.
+        </Box>
+      </Heading>
+      <Text textStyle="bodyLg" maxW="58ch" mt="leading1_5" color="fg.subtle">
+        Kampung Ride matches you with neighbours from your own estate — your block, your
+        condo, your kampung — who are already driving to work every morning. Tag along,
+        chip in for the ride, skip the surge pricing.
+      </Text>
+      <Box display="flex" gap="3" flexWrap="wrap" mt="leading">
+        <Button asChild colorPalette="accent" variant="solid">
+          <a href="#start">Join waitlist</a>
+        </Button>
+        <Button asChild colorPalette="accent" variant="ghost">
+          <a href="#how">See how it works</a>
+        </Button>
+      </Box>
+    </Container>
   );
 }

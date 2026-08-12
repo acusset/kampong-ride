@@ -1,67 +1,51 @@
 "use client";
 
 import { signupAction, type SignupState } from "@/app/_actions/signup";
-import { cn } from "@/lib/utils";
-import { Chip, FieldError, Input, Label, TextField } from "@heroui/react";
+import { chakra, Field, Input, Text, VisuallyHidden } from "@chakra-ui/react";
 import { useActionState } from "react";
 import { SubmitButton } from "./SubmitButton";
 
 const initialState: SignupState = { status: "idle" };
 
-export default function SignupForm({
-  center = false,
-  role = "driver",
-}: {
-  center?: boolean;
-  role?: "driver" | "rider";
-}) {
+export default function SignupForm() {
   const [state, formAction] = useActionState(signupAction, initialState);
 
   if (state.status === "success") {
     return (
-      <div
-        role="status"
-        aria-live="polite"
-        className={cn("mt-8 max-w-[460px]", center && "mx-auto")}
-      >
-        <Chip
-          variant="soft"
-          color="success"
-          className="gap-2 border border-success/25 py-1.5"
-        >
-          {state.message}
-        </Chip>
-      </div>
+      <Text role="status" aria-live="polite" textStyle="calloutTitle" mt="leading1_5">
+        {state.message}
+      </Text>
     );
   }
 
   return (
-      <form
-        className={cn(
-          "mt-8 flex max-w-[460px] flex-col gap-2.5",
-          center && "mx-auto",
-        )}
-        action={formAction}
-      >
-        <input type="hidden" name="role" value={role} />
-        <div className="flex flex-wrap gap-2.5 items-start" aria-live="polite">
-          <TextField
-            isRequired
-            name="email"
-            type="email"
-            className="min-w-0 flex-1 basis-[240px]"
-            isInvalid={state.status === "error"}
-          >
-            <Label htmlFor="email-input" className="sr-only">
-              Email address
-              </Label>
-            <Input id="email-input" fullWidth placeholder="you@example.com" className="py-3.5" />
-            <FieldError>
-              {state.message}
-            </FieldError>
-          </TextField>
-          <SubmitButton/>
-        </div>
-      </form>
+    <chakra.form
+      action={formAction}
+      display="flex"
+      gap="3"
+      flexWrap="wrap"
+      alignItems="flex-start"
+      mt="leading1_5"
+    >
+      <input type="hidden" name="role" value="rider" />
+      <Field.Root required invalid={state.status === "error"} minW="0" flexBasis="260px" flex="1" maxW="360px">
+        <VisuallyHidden>
+          <Field.Label htmlFor="start-email-input">Email address</Field.Label>
+        </VisuallyHidden>
+        <Input
+          id="start-email-input"
+          name="email"
+          type="email"
+          placeholder="Email address"
+          bg="bg.panel"
+          borderColor="border"
+          color="fg"
+          borderRadius="0"
+          minH="42px"
+        />
+        <Field.ErrorText color="fg">{state.message}</Field.ErrorText>
+      </Field.Root>
+      <SubmitButton />
+    </chakra.form>
   );
 }
