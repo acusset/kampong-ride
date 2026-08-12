@@ -1,3 +1,4 @@
+import { copy } from "@/lib/copy";
 import { Button, Container, Flex, Link, Text } from "@chakra-ui/react";
 import { ArrowRight } from "lucide-react";
 
@@ -13,7 +14,7 @@ export default function Nav() {
       borderBottomWidth="2px"
       borderBottomColor="border"
     >
-      <Text textStyle="wordmark">Kampung Ride</Text>
+      <Text textStyle="wordmark">{copy.nav.wordmark}</Text>
       <Flex alignItems="center" gap="leading" flexWrap="wrap">
         <Link
           href="#how"
@@ -21,7 +22,7 @@ export default function Nav() {
           color="fg"
           _hover={{ color: "accent.fg", textDecoration: "none" }}
         >
-          How it works
+          {copy.nav.links.how}
         </Link>
         <Link
           href="#drive"
@@ -29,7 +30,7 @@ export default function Nav() {
           color="fg"
           _hover={{ color: "accent.fg", textDecoration: "none" }}
         >
-          Already driving?
+          {copy.nav.links.drive}
         </Link>
         <Link
           href="#faq"
@@ -37,11 +38,11 @@ export default function Nav() {
           color="fg"
           _hover={{ color: "accent.fg", textDecoration: "none" }}
         >
-          FAQ
+          {copy.nav.links.faq}
         </Link>
         <Button asChild colorPalette="accent" variant="solid" size="sm">
           <a href="#start">
-            Join waitlist
+            {copy.nav.cta}
             <ArrowRight size={16} />
           </a>
         </Button>

@@ -4,6 +4,7 @@ import { track } from "@vercel/analytics/server";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
+import { copy } from "@/lib/copy";
 import { db } from "@/lib/db";
 import { waitlistSignups } from "@/lib/db/schema";
 
@@ -11,10 +12,10 @@ const signupSchema = createInsertSchema(waitlistSignups, {
   email: z
     .email({
       pattern: z.regexes.html5Email,
-      message: "Enter a valid email address.",
+      message: copy.signup.errors.invalidEmail,
     })
     .trim()
-    .min(1, "Enter a valid email address."),
+    .min(1, copy.signup.errors.invalidEmail),
   role: z
     .string()
     .nullable()
@@ -53,7 +54,7 @@ export async function signupAction(
     return {
       status: "error",
       message:
-        parsed.error.issues[0]?.message ?? "Enter a valid email address.",
+        parsed.error.issues[0]?.message ?? copy.signup.errors.invalidEmail,
     };
   }
 
@@ -71,7 +72,7 @@ export async function signupAction(
 
     return {
       status: "error",
-      message: "Something went wrong. Please try again later.",
+      message: copy.signup.errors.serverError,
     };
   }
 
@@ -86,6 +87,6 @@ export async function signupAction(
 
   return {
     status: "success",
-    message: "You're on the list — we'll email you when Kampung Ride reaches your estate.",
+    message: copy.signup.success,
   };
 }

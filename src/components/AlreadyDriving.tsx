@@ -1,7 +1,6 @@
+import { copy } from "@/lib/copy";
 import { Box, Button, Container, Heading, Text } from "@chakra-ui/react";
 import Eyebrow from "./Eyebrow";
-
-const TAGS = ["You choose your riders", "Fuel costs split fairly", "Pause anytime"];
 
 export default function AlreadyDriving() {
   return (
@@ -16,18 +15,16 @@ export default function AlreadyDriving() {
       py="leading2_5"
     >
       <Box>
-        <Eyebrow>Driving to work?</Eyebrow>
+        <Eyebrow>{copy.alreadyDriving.eyebrow}</Eyebrow>
         <Heading as="h2" textStyle="subsectionTitle" m="0">
-          Turn your empty seats into savings
+          {copy.alreadyDriving.title}
         </Heading>
         <Text textStyle="body" color="fg.subtle" mt="half" maxW="48ch">
-          It&rsquo;s a trip you&rsquo;re already making. Offer a seat to up to three neighbours —
-          you set the days, the seats and the pickup points, riders chip in for fuel, and you
-          start the day with company instead of an empty car.
+          {copy.alreadyDriving.body}
         </Text>
         <Box mt="leading">
           <Button asChild colorPalette="accent" variant="solid">
-            <a href="#start">Offer a seat</a>
+            <a href="#start">{copy.alreadyDriving.cta}</a>
           </Button>
         </Box>
       </Box>
@@ -43,7 +40,7 @@ export default function AlreadyDriving() {
         textAlign="center"
       >
         <Text fontSize="13px" color="fg.faint">
-          Photo placeholder — driver and neighbours carpooling in the morning
+          {copy.alreadyDriving.photoPlaceholder}
         </Text>
       </Box>
     </Container>
