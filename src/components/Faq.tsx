@@ -1,7 +1,7 @@
-import { Box, Container, Text } from "@chakra-ui/react";
+import { Accordion, Container, Span, Text } from "@chakra-ui/react";
+import { ChevronDown } from "lucide-react";
 import Eyebrow from "./Eyebrow";
 import Rule from "./Rule";
-import { ChevronDown } from "lucide-react";
 
 const FAQS = [
   {
@@ -27,44 +27,33 @@ const FAQS = [
 ];
 
 export default function Faq() {
+  const items = FAQS.map((item, i) => (
+    <Accordion.Item key={item.q} value={item.q}>
+      {i > 0 && <Rule />}
+      <Accordion.ItemTrigger py="leading" cursor="pointer" gap="leading">
+        <Span flex="1" textStyle="calloutTitle" textAlign="start">
+          {item.q}
+        </Span>
+        <Accordion.ItemIndicator color="accent.solid">
+          <ChevronDown size={20} />
+        </Accordion.ItemIndicator>
+      </Accordion.ItemTrigger>
+      <Accordion.ItemContent pb="leading">
+        <Accordion.ItemBody>
+          <Text textStyle="body" color="fg.subtle" maxW="52ch">
+            {item.a}
+          </Text>
+        </Accordion.ItemBody>
+      </Accordion.ItemContent>
+    </Accordion.Item>
+  ));
+
   return (
     <Container as="section" id="faq" pt="leading2_5" pb="leading3">
       <Eyebrow>Questions</Eyebrow>
-
-      {FAQS.map((item, i) => (
-        <Box key={item.q}>
-          {i > 0 && <Rule />}
-          <Box
-            as="details"
-            py="leading"
-            css={{
-              "& summary svg": { transition: "transform 0.15s ease" },
-              "&[open] summary svg": { transform: "rotate(180deg)" },
-            }}
-          >
-            <Box
-              as="summary"
-              cursor="pointer"
-              listStyleType="none"
-              display="flex"
-              justifyContent="space-between"
-              alignItems="baseline"
-              gap="leading"
-              css={{ "&::-webkit-details-marker": { display: "none" } }}
-            >
-              <Text as="span" textStyle="calloutTitle">
-                {item.q}
-              </Text>
-              <Box flex="none" color="accent.solid">
-                <ChevronDown size={20} />
-              </Box>
-            </Box>
-            <Text textStyle="body" color="fg.subtle" mt="half" maxW="52ch">
-              {item.a}
-            </Text>
-          </Box>
-        </Box>
-      ))}
+      <Accordion.Root variant="plain" collapsible>
+        {items}
+      </Accordion.Root>
     </Container>
   );
 }

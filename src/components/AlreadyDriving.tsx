@@ -16,7 +16,7 @@ export default function AlreadyDriving() {
       py="leading2_5"
     >
       <Box>
-        <Eyebrow>Already driving?</Eyebrow>
+        <Eyebrow>Driving to work?</Eyebrow>
         <Heading as="h2" textStyle="subsectionTitle" m="0">
           Turn your empty seats into savings
         </Heading>
@@ -25,24 +25,6 @@ export default function AlreadyDriving() {
           you set the days, the seats and the pickup points, riders chip in for fuel, and you
           start the day with company instead of an empty car.
         </Text>
-        <Box display="flex" gap="2" flexWrap="wrap" mt="leading">
-          {TAGS.map((tag) => (
-            <Box
-              key={tag}
-              as="span"
-              display="inline-flex"
-              alignItems="center"
-              fontSize="11px"
-              letterSpacing="0.02em"
-              px="2.5"
-              py="3px"
-              bg="accent.subtle"
-              color="accent.800"
-            >
-              {tag}
-            </Box>
-          ))}
-        </Box>
         <Box mt="leading">
           <Button asChild colorPalette="accent" variant="solid">
             <a href="#start">Offer a seat</a>
