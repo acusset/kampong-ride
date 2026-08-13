@@ -10,9 +10,6 @@ export default function SignupSection() {
           <Box as="span" display="block">
             {copy.signup.titleLine1}
           </Box>
-          {/* <Box as="span" display="block">
-            {copy.signup.titleLine2}
-          </Box> */}
         </Heading>
         <Text textStyle="body" maxW="48ch" mt="half" color="bg/85">
           {copy.signup.body}

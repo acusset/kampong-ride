@@ -1,5 +1,6 @@
 import { copy } from "@/lib/copy";
-import { Box, Button, Container, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Heading, Icon, Text } from "@chakra-ui/react";
+import { Image } from "lucide-react";
 import Eyebrow from "./Eyebrow";
 
 export default function AlreadyDriving() {
@@ -37,10 +38,10 @@ export default function AlreadyDriving() {
         justify="center"
         px={4}
         textAlign="center"
+        role="img"
+        aria-label={copy.alreadyDriving.photoPlaceholder}
       >
-        <Text fontSize="13px" color="fg.faint">
-          {copy.alreadyDriving.photoPlaceholder}
-        </Text>
+        <Icon as={Image} aria-hidden boxSize={8} color="fg.faint" strokeWidth={1.5} />
       </Flex>
     </Container>
   );
