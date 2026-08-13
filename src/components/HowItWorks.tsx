@@ -1,5 +1,5 @@
 import { copy } from "@/lib/copy";
-import { Box, Container, Heading, Text } from "@chakra-ui/react";
+import { Box, Container, Grid, Heading, Text } from "@chakra-ui/react";
 import Eyebrow from "./Eyebrow";
 
 export default function HowItWorks() {
@@ -8,11 +8,9 @@ export default function HowItWorks() {
       <Eyebrow>{copy.howItWorks.eyebrow}</Eyebrow>
 
       {copy.howItWorks.steps.map((step, i) => (
-        <Box
+        <Grid
           key={step.number}
-          display="grid"
-          gridTemplateColumns={{
-            
+          templateColumns={{
             base: "1fr",
             lg: "minmax(64px, 160px) minmax(0, 420px) minmax(0, 1fr)",
           }}
@@ -42,7 +40,7 @@ export default function HowItWorks() {
           <Text textStyle="body" m="0" color="fg.subtle" maxW="52ch">
             {step.body}
           </Text>
-        </Box>
+        </Grid>
       ))}
     </Container>
   );

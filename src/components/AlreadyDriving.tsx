@@ -1,5 +1,5 @@
 import { copy } from "@/lib/copy";
-import { Box, Button, Container, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Heading, Text } from "@chakra-ui/react";
 import Eyebrow from "./Eyebrow";
 
 export default function AlreadyDriving() {
@@ -28,21 +28,20 @@ export default function AlreadyDriving() {
           </Button>
         </Box>
       </Box>
-      <Box
+      <Flex
         aspectRatio={951 / 665}
         w="100%"
         bg="bg.panel"
         filter="grayscale(1) contrast(1.08)"
-        display="flex"
-        alignItems="center"
-        justifyContent="center"
+        align="center"
+        justify="center"
         px={4}
         textAlign="center"
       >
         <Text fontSize="13px" color="fg.faint">
           {copy.alreadyDriving.photoPlaceholder}
         </Text>
-      </Box>
+      </Flex>
     </Container>
   );
 }

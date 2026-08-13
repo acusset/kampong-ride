@@ -1,14 +1,13 @@
 import { copy } from "@/lib/copy";
-import { Box, Container, Text } from "@chakra-ui/react";
+import { Box, Container, Grid, Text } from "@chakra-ui/react";
 import Eyebrow from "./Eyebrow";
 
 export default function WhatItCosts() {
   return (
     <Container as="section" py="leading2_5">
       <Eyebrow>{copy.whatItCosts.eyebrow}</Eyebrow>
-      <Box
-        display="grid"
-        gridTemplateColumns={{ base: "1fr", sm: "1fr 1fr" }}
+      <Grid
+        templateColumns={{ base: "1fr", sm: "1fr 1fr" }}
         rowGap="leading"
         columnGap="gutterLg"
         alignItems="end"
@@ -30,7 +29,7 @@ export default function WhatItCosts() {
             {copy.whatItCosts.kampungRide.label}
           </Text>
         </Box>
-      </Box>
+      </Grid>
       <Text textStyle="caption" color="fg.faint" mt="leading">
         {copy.whatItCosts.caption}
       </Text>

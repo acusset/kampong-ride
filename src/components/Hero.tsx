@@ -1,5 +1,5 @@
 import { copy } from "@/lib/copy";
-import { Box, Button, Container, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Heading, Text } from "@chakra-ui/react";
 
 export default function Hero() {
   return (
@@ -15,14 +15,14 @@ export default function Hero() {
       <Text textStyle="bodyLg" maxW="58ch" mt="leading1_5" color="fg.subtle">
         {copy.hero.body}
       </Text>
-      <Box display="flex" gap="3" flexWrap="wrap" mt="leading">
+      <Flex gap="3" wrap="wrap" mt="leading">
         <Button asChild colorPalette="accent" variant="solid">
           <a href="#start">{copy.hero.ctaPrimary}</a>
         </Button>
         <Button asChild colorPalette="accent" variant="ghost">
           <a href="#how">{copy.hero.ctaSecondary}</a>
         </Button>
-      </Box>
+      </Flex>
     </Container>
   );
 }
