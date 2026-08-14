@@ -41,7 +41,9 @@ export default function AlreadyDriving() {
         role="img"
         aria-label={copy.alreadyDriving.photoPlaceholder}
       >
-        <Icon as={Image} aria-hidden boxSize={8} color="fg.faint" strokeWidth={1.5} />
+        <Icon aria-hidden boxSize={8} color="fg.faint">
+          <Image strokeWidth={1.5} />
+        </Icon>
       </Flex>
     </Container>
   );
