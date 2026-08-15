@@ -15,7 +15,7 @@ export const copy = {
   },
   hero: {
     titleLine1: "Skip the morning surge.",
-    titleLine2: "Join a ride.",
+    titleLine2: "Join the ride.",
     body: "Kampung Ride matches you with neighbours from your own estate — your block, your condo, your kampung — who are already driving to work every morning. Tag along, chip in for the ride, skip the surge pricing.",
     ctaPrimary: "Join waitlist",
     ctaSecondary: "See how it works",
@@ -25,21 +25,16 @@ export const copy = {
     steps: [
       {
         number: "01",
-        title: "Tell us your estate",
-        body: "Teban Gardens, a cluster of HDB blocks, a condo — whatever your kampung is. We match locally first, starting with neighbours who already live near you.",
+        title: "Create or join a ride",
+        body: "Find neighbours who are already driving to work and heading in your direction.",
       },
       {
         number: "02",
-        title: "Get matched with neighbours",
-        body: "We pair you with neighbours who already make this trip every day — no one's going out of their way for you.",
-      },
-      {
-        number: "03",
         title: "Ride together, split the cost",
         body: "Chip in for fuel and parking directly with your driver. No surge pricing, no platform markup — just a fair split between neighbours.",
       },
       {
-        number: "04",
+        number: "03",
         title: "Do it again tomorrow",
         body: "Keep a regular match for a standing carpool, or find someone new whenever your schedule changes.",
       },
@@ -48,34 +43,21 @@ export const copy = {
   alreadyDriving: {
     eyebrow: "Driving to work?",
     title: "Turn your empty seats into savings",
-    body: "It’s a trip you’re already making. Offer a seat to up to three neighbours — you set the days, the seats and the pickup points, riders chip in for fuel, and you start the day with company instead of an empty car.",
+    body: "It’s a trip you’re already making. Offer seats to neighbours: you set the route, the pickup point, riders chip in for fuel.",
     cta: "Offer a seat",
     photoPlaceholder: "Photo placeholder — driver and neighbours carpooling in the morning",
     tags: ["You choose your riders", "Fuel costs split fairly", "Pause anytime"],
-  },
-  whatItCosts: {
-    eyebrow: "What it costs",
-    rideHailing: {
-      amount: "~$18",
-      label: "Ride-hailing, surge hour, one rider",
-    },
-    kampungRide: {
-      amount: "$5–7",
-      label: "Kampung Ride, same trip, split with the driver",
-    },
-    caption:
-      "Illustrative example for a typical estate-to-town commute. Actual cost depends on distance and how many neighbours share the ride.",
   },
   faq: {
     eyebrow: "Questions",
     items: [
       {
-        q: "Which estates are covered?",
-        a: "We're rolling out estate by estate. Tell us yours when you join the waitlist and we'll let you know as soon as Kampung Ride is live near you. Matches are always with someone from your own estate — you're never paired with a stranger from across town.",
+        q: "Is it available in my neighbourhood?",
+        a: "The more people who join, the more likely you’ll find a match. So spread the word! And register your commute to encourage neighbours to join.",
       },
       {
         q: "How much does it cost?",
-        a: "Riders split fuel and parking directly with the driver — there's no markup and no surge pricing. You and your driver agree the amount before the ride.",
+        a: "The price per seat is set by the driver, based on fuel and parking costs",
       },
       {
         q: "Do I need a car to join?",
@@ -85,16 +67,12 @@ export const copy = {
         q: "Do I have to commit to every day?",
         a: "No — join for the days that work for you. Ride occasionally, or set up a standing match for your regular commute.",
       },
-      {
-        q: "What if my match falls through?",
-        a: "You're never locked into one ride. Cancel with notice and we'll help you find another neighbour heading your way, or fall back to your usual commute for the day.",
-      },
     ],
   },
   signup: {
-    titleLine1: "Your kampung is coming soon.",
+    titleLine1: "Your ride is coming soon.",
     titleLine2: "than you think.",
-    body: "Started by neighbours tired of surge pricing — not a big rideshare company.",
+    body: "Started by neighbours tired of surge pricing, being stuck in traffic and looking at empty seats in other cars.",
     form: {
       emailLabel: "Email address",
       emailPlaceholder: "Email address",
@@ -105,7 +83,7 @@ export const copy = {
       invalidEmail: "Enter a valid email address.",
       serverError: "Something went wrong. Please try again later.",
     },
-    success: "You're on the list — we'll email you when Kampung Ride reaches your estate.",
+    success: "You're on the list!",
   },
   footer: {
     tagline: "Kampung Ride — carpool with your neighbours.",

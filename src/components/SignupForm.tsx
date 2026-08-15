@@ -14,7 +14,12 @@ export default function SignupForm() {
 
   if (state.status === "success") {
     return (
-      <Text role="status" aria-live="polite" textStyle="calloutTitle" mt="leading1_5">
+      <Text
+        role="status"
+        aria-live="polite"
+        textStyle="calloutTitle"
+        mt="leading1_5"
+      >
         {state.message}
       </Text>
     );
@@ -30,9 +35,18 @@ export default function SignupForm() {
       mt="leading1_5"
     >
       <input type="hidden" name="role" value="rider" />
-      <Field.Root required invalid={state.status === "error"} minW="0" flexBasis="260px" flex="1" maxW="360px">
+      <Field.Root
+        required
+        invalid={state.status === "error"}
+        minW="0"
+        flexBasis="260px"
+        flex="1"
+        maxW="360px"
+      >
         <VisuallyHidden>
-          <Field.Label htmlFor="start-email-input">{copy.signup.form.emailLabel}</Field.Label>
+          <Field.Label htmlFor="start-email-input">
+            {copy.signup.form.emailLabel}
+          </Field.Label>
         </VisuallyHidden>
         <Input
           id="start-email-input"
