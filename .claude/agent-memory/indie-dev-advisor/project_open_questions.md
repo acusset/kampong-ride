@@ -1,6 +1,6 @@
 ---
 name: project-open-questions
-description: Strategic questions on Kampung Ride not yet resolved — supply cold-start, LTA rules, monetization
+description: Strategic questions on Kampong Ride not yet resolved — supply cold-start, LTA rules, monetization
 metadata:
   type: project
 ---
@@ -15,4 +15,4 @@ Open questions worth revisiting in future sessions:
 
 **Why:** These are the fundamentals that determine whether the product can work — worth surfacing whenever Antoine shifts from copy/UI questions to product/strategy questions.
 
-**How to apply:** If a conversation drifts into feature-brainstorming without touching these, gently redirect. Related: [[project-kampung-ride-core]].
+**How to apply:** If a conversation drifts into feature-brainstorming without touching these, gently redirect. Related: [[project-kampong-ride-core]].

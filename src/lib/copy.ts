@@ -1,11 +1,11 @@
 export const copy = {
   meta: {
-    title: "Kampung Ride — skip the surge, ride with your neighbours",
+    title: "Kampong Ride — skip the surge, ride with your neighbours",
     description:
-      "Kampung Ride matches you with neighbours from your own estate who are already driving to work. Tag along, chip in for the ride, skip the surge pricing.",
+      "Kampong Ride matches you with neighbours from your own estate who are already driving to work. Tag along, chip in for the ride, skip the surge pricing.",
   },
   nav: {
-    wordmark: "Kampung Ride",
+    wordmark: "Kampong Ride",
     links: {
       how: "How it works",
       drive: "Already driving?",
@@ -16,7 +16,7 @@ export const copy = {
   hero: {
     titleLine1: "Skip the morning surge.",
     titleLine2: "Join the ride.",
-    body: "Kampung Ride matches you with neighbours from your own estate — your block, your condo, your kampung — who are already driving to work every morning. Tag along, chip in for the ride, skip the surge pricing.",
+    body: "Kampong Ride matches you with neighbours from your own estate — your block, your condo, your kampong — who are already driving to work every morning. Tag along, chip in for the ride, skip the surge pricing.",
     ctaPrimary: "Join waitlist",
     ctaSecondary: "See how it works",
   },
@@ -86,7 +86,7 @@ export const copy = {
     success: "You're on the list!",
   },
   footer: {
-    tagline: "Kampung Ride — carpool with your neighbours.",
+    tagline: "Kampong Ride — carpool with your neighbours.",
   },
 } as const;
 

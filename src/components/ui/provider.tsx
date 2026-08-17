@@ -2,7 +2,7 @@
 
 import { ChakraProvider } from "@chakra-ui/react"
 import { ThemeProvider } from "next-themes"
-import { system } from "./kampung-ride-theme"
+import { system } from "./kampong-ride-theme"
 
 export default function Provider(props: { children: React.ReactNode }) {
   return (

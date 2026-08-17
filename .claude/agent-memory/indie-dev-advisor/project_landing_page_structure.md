@@ -1,6 +1,6 @@
 ---
 name: project-landing-page-structure
-description: Current Kampung Ride landing page sections, form, and headlines as of Aug 2026
+description: Current Kampong Ride landing page sections, form, and headlines as of Aug 2026
 metadata:
   type: project
 ---
