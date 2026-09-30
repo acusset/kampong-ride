@@ -45,7 +45,7 @@ export const copy = {
     title: "Turn your empty seats into savings",
     body: "It’s a trip you’re already making. Offer seats to neighbours: you set the route, the pickup point, riders chip in for fuel.",
     cta: "Offer a seat",
-    photoPlaceholder: "Photo placeholder — driver and neighbours carpooling in the morning",
+    photoAlt: "A driver and neighbours carpooling together on a morning commute",
     tags: ["You choose your riders", "Fuel costs split fairly", "Pause anytime"],
   },
   faq: {

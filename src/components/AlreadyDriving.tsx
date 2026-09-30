@@ -1,6 +1,7 @@
 import { copy } from "@/lib/copy";
-import { Box, Button, Container, Flex, Heading, Icon, Text } from "@chakra-ui/react";
-import { Image } from "lucide-react";
+import { Box, Button, Container, Heading, Text } from "@chakra-ui/react";
+import Image from "next/image";
+import carpool from "@/assets/carpool.jpeg";
 import Eyebrow from "./Eyebrow";
 
 export default function AlreadyDriving() {
@@ -29,22 +30,22 @@ export default function AlreadyDriving() {
           </Button>
         </Box>
       </Box>
-      <Flex
+      <Box
+        position="relative"
         aspectRatio={951 / 665}
         w="100%"
         bg="bg.panel"
         filter="grayscale(1) contrast(1.08)"
-        align="center"
-        justify="center"
-        px={4}
-        textAlign="center"
-        role="img"
-        aria-label={copy.alreadyDriving.photoPlaceholder}
       >
-        <Icon aria-hidden boxSize={8} color="fg.faint">
-          <Image strokeWidth={1.5} />
-        </Icon>
-      </Flex>
+        <Image
+          src={carpool}
+          alt={copy.alreadyDriving.photoAlt}
+          fill
+          placeholder="blur"
+          sizes="(min-width: 992px) 58vw, 100vw"
+          style={{ objectFit: "cover" }}
+        />
+      </Box>
     </Container>
   );
 }
