@@ -6,6 +6,7 @@ import { z } from "zod";
 
 import { copy } from "@/lib/copy";
 import { db } from "@/lib/db";
+import { sendGAServerEvent } from "@/lib/ga-server";
 import { waitlistSignups } from "@/lib/db/schema";
 
 const signupSchema = createInsertSchema(waitlistSignups, {
@@ -83,6 +84,9 @@ export async function signupAction(
     });
   } else {
     track("waitlist_signup", { role: sanitizedFormData.role });
+    await sendGAServerEvent("waitlist_signup", {
+      role: sanitizedFormData.role,
+    });
   }
 
   return {
